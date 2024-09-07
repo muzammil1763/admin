@@ -223,7 +223,7 @@ const ProductForm: React.FC = () => {
         </div>
       )}
       <div className="bg-blue-500 w-[70vw] mx-auto">
-        <form
+        {/* <form
           onSubmit={handleSubmit}
           className=" w-[30vw] mt-20  space-y-6  bg-black text-white  shadow-md "
         >
@@ -443,7 +443,7 @@ const ProductForm: React.FC = () => {
           >
             Submit
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );
