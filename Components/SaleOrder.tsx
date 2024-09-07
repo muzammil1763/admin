@@ -56,11 +56,11 @@ const SaleOrder: React.FC = () => {
         </div>
       )}
       <h2 className="text-2xl font-bold text-black mb-4">Sale Orders</h2>
-      <div className="grid gap-y-4 grid-cols-1  ">
+      <div className="grid  grid-cols-1  ">
         {orders.map((order) => (
           <div
             key={order._id}
-            className="bg-black text-white shadow-md rounded-md p-4 w-full mb-24"
+            className="bg-black mb-24 text-white shadow-md rounded-md p-4 w-full "
           >
             {/* Customer Information Section */}
             <div className="mb-4">
