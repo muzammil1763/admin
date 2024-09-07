@@ -224,7 +224,7 @@ const ProductForm: React.FC = () => {
       )}
       <form
         onSubmit={handleSubmit}
-        className=" w-[30vw] mt-20  space-y-6  bg-black text-white  shadow-md mx-auto"
+        className=" w-[30vw] mt-20  space-y-6  bg-black text-white  shadow-md "
       >
         <div>
           <label
