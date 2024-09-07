@@ -222,7 +222,7 @@ const ProductForm: React.FC = () => {
           </div>
         </div>
       )}
-      <div className="bg-blue-500 w-[70vw] mx-auto">
+      <div className="bg-blue-500 w-[70vw] h-[50vh] mx-auto">
         {/* <form
           onSubmit={handleSubmit}
           className=" w-[30vw] mt-20  space-y-6  bg-black text-white  shadow-md "
