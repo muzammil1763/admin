@@ -56,7 +56,7 @@ const SaleOrder: React.FC = () => {
         </div>
       )}
       <h2 className="text-2xl font-bold text-black mb-4">Sale Orders</h2>
-      <div className="flex flex-col gap-4 ">
+      <div className="flex flex-col gap-4 justify-around">
         {orders.map((order) => (
           <div
             key={order._id}
