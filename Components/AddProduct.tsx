@@ -222,227 +222,229 @@ const ProductForm: React.FC = () => {
           </div>
         </div>
       )}
-      <form
-        onSubmit={handleSubmit}
-        className=" w-[30vw] mt-20  space-y-6  bg-black text-white  shadow-md "
-      >
-        <div>
-          <label
-            htmlFor="colorName"
-            className="block text-sm font-medium text-white"
-          >
-            Color Name
-          </label>
-          <input
-            type="text"
-            id="colorName"
-            value={formData.colorName}
-            placeholder="colorName"
-            required
-            onChange={handleChange}
-            className="mt-1  p-1 text-black block w-full rounded-md   shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="colorImage"
-            className="block text-sm font-medium text-white"
-          >
-            Color Image
-          </label>
-          <input
-            type="file"
-            id="colorImage"
-            required
-            onChange={handleChange}
-            className="mt-1 block w-full p-1 text-black"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="colorImageName"
-            className="block text-sm font-medium text-white"
-          >
-            Color Image Name
-          </label>
-          <input
-            type="text"
-            id="colorImageName"
-            value={formData.colorImageName}
-            onChange={handleChange}
-            required
-            placeholder="Color Image Name"
-            className="mt-1 block w-full rounded-md p-1 text-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="disc"
-            className="block text-sm font-medium text-white"
-          >
-            Description
-          </label>
-          <input
-            type="text"
-            id="disc"
-            value={formData.disc}
-            required
-            placeholder="discription"
-            onChange={handleChange}
-            className="mt-1 block w-full rounded-md p-1 text-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="price"
-            className="block text-sm font-medium text-white"
-          >
-            Price
-          </label>
-          <input
-            type="number"
-            id="price"
-            value={formData.price}
-            required
-            placeholder="0"
-            onChange={(e) =>
-              setFormData((prev) => ({
-                ...prev,
-                price: Number(e.target.value),
-              }))
-            }
-            className="mt-1 block w-full rounded-md p-1 text-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="category"
-            className="block text-sm font-medium text-white"
-          >
-            Category
-          </label>
-          <select
-            id="category"
-            value={formData.category}
-            onChange={handleChange}
-            className="mt-1 block w-full rounded-md p-1 text-black  shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
-          >
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-white">
-            Fabric Images
-          </label>
-          {formData.fabrics.map((fabric, index) => (
-            <div key={index} className="mb-4">
-              <input
-                type="file"
-                id={`fabricFile-${index}`}
-                required
-                onChange={handleChange}
-                className="block w-full p-1 text-black"
-              />
-              <input
-                type="text"
-                id={`fabricName-${index}`}
-                value={fabric.name}
-                required
-                onChange={handleChange}
-                placeholder="Fabric Name"
-                className="mt-1 block w-full rounded-md p-1 text-black  shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
-              />
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={() => handleAddMore("fabrics")}
-            className="text-white"
-          >
-            Add More Fabric Images
-          </button>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-white">
-            Front Pocket Images
-          </label>
-          {formData.frontPockets.map((frontPocket, index) => (
-            <div key={index} className="mb-4">
-              <input
-                type="file"
-                id={`frontPocketFile-${index}`}
-                required
-                onChange={handleChange}
-                className="block w-full text-white"
-              />
-              <input
-                type="text"
-                id={`frontPocketName-${index}`}
-                required
-                value={frontPocket.name}
-                onChange={handleChange}
-                placeholder="Front Pocket Name"
-                className="mt-1 block w-full rounded-md p-1 text-black  shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
-              />
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={() => handleAddMore("frontPockets")}
-            className="text-white"
-          >
-            Add More Front Pocket Images
-          </button>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-white">
-            Back Pocket Images
-          </label>
-          {formData.backPockets.map((backPocket, index) => (
-            <div key={index} className="mb-4">
-              <input
-                type="file"
-                id={`backPocketFile-${index}`}
-                required
-                onChange={handleChange}
-                className="block w-full text-white"
-              />
-              <input
-                type="text"
-                id={`backPocketName-${index}`}
-                required
-                value={backPocket.name}
-                onChange={handleChange}
-                placeholder="Back Pocket Name"
-                className="mt-1 block w-full p-1 text-black rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm "
-              />
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={() => handleAddMore("backPockets")}
-            className="text-white"
-          >
-            Add More Back Pocket Images
-          </button>
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-white text-black py-2 rounded-md shadow-md hover:bg-black hover:text-white"
+      <div className="bg-blue-500 w-[70vw] mx-auto">
+        <form
+          onSubmit={handleSubmit}
+          className=" w-[30vw] mt-20  space-y-6  bg-black text-white  shadow-md "
         >
-          Submit
-        </button>
-      </form>
+          <div>
+            <label
+              htmlFor="colorName"
+              className="block text-sm font-medium text-white"
+            >
+              Color Name
+            </label>
+            <input
+              type="text"
+              id="colorName"
+              value={formData.colorName}
+              placeholder="colorName"
+              required
+              onChange={handleChange}
+              className="mt-1  p-1 text-black block w-full rounded-md   shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="colorImage"
+              className="block text-sm font-medium text-white"
+            >
+              Color Image
+            </label>
+            <input
+              type="file"
+              id="colorImage"
+              required
+              onChange={handleChange}
+              className="mt-1 block w-full p-1 text-black"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="colorImageName"
+              className="block text-sm font-medium text-white"
+            >
+              Color Image Name
+            </label>
+            <input
+              type="text"
+              id="colorImageName"
+              value={formData.colorImageName}
+              onChange={handleChange}
+              required
+              placeholder="Color Image Name"
+              className="mt-1 block w-full rounded-md p-1 text-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="disc"
+              className="block text-sm font-medium text-white"
+            >
+              Description
+            </label>
+            <input
+              type="text"
+              id="disc"
+              value={formData.disc}
+              required
+              placeholder="discription"
+              onChange={handleChange}
+              className="mt-1 block w-full rounded-md p-1 text-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="price"
+              className="block text-sm font-medium text-white"
+            >
+              Price
+            </label>
+            <input
+              type="number"
+              id="price"
+              value={formData.price}
+              required
+              placeholder="0"
+              onChange={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  price: Number(e.target.value),
+                }))
+              }
+              className="mt-1 block w-full rounded-md p-1 text-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="category"
+              className="block text-sm font-medium text-white"
+            >
+              Category
+            </label>
+            <select
+              id="category"
+              value={formData.category}
+              onChange={handleChange}
+              className="mt-1 block w-full rounded-md p-1 text-black  shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-white">
+              Fabric Images
+            </label>
+            {formData.fabrics.map((fabric, index) => (
+              <div key={index} className="mb-4">
+                <input
+                  type="file"
+                  id={`fabricFile-${index}`}
+                  required
+                  onChange={handleChange}
+                  className="block w-full p-1 text-black"
+                />
+                <input
+                  type="text"
+                  id={`fabricName-${index}`}
+                  value={fabric.name}
+                  required
+                  onChange={handleChange}
+                  placeholder="Fabric Name"
+                  className="mt-1 block w-full rounded-md p-1 text-black  shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
+                />
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={() => handleAddMore("fabrics")}
+              className="text-white"
+            >
+              Add More Fabric Images
+            </button>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-white">
+              Front Pocket Images
+            </label>
+            {formData.frontPockets.map((frontPocket, index) => (
+              <div key={index} className="mb-4">
+                <input
+                  type="file"
+                  id={`frontPocketFile-${index}`}
+                  required
+                  onChange={handleChange}
+                  className="block w-full text-white"
+                />
+                <input
+                  type="text"
+                  id={`frontPocketName-${index}`}
+                  required
+                  value={frontPocket.name}
+                  onChange={handleChange}
+                  placeholder="Front Pocket Name"
+                  className="mt-1 block w-full rounded-md p-1 text-black  shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border-gray-300"
+                />
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={() => handleAddMore("frontPockets")}
+              className="text-white"
+            >
+              Add More Front Pocket Images
+            </button>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-white">
+              Back Pocket Images
+            </label>
+            {formData.backPockets.map((backPocket, index) => (
+              <div key={index} className="mb-4">
+                <input
+                  type="file"
+                  id={`backPocketFile-${index}`}
+                  required
+                  onChange={handleChange}
+                  className="block w-full text-white"
+                />
+                <input
+                  type="text"
+                  id={`backPocketName-${index}`}
+                  required
+                  value={backPocket.name}
+                  onChange={handleChange}
+                  placeholder="Back Pocket Name"
+                  className="mt-1 block w-full p-1 text-black rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm "
+                />
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={() => handleAddMore("backPockets")}
+              className="text-white"
+            >
+              Add More Back Pocket Images
+            </button>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-white text-black py-2 rounded-md shadow-md hover:bg-black hover:text-white"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
