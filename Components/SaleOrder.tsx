@@ -55,7 +55,7 @@ const SaleOrder: React.FC = () => {
           <div className="text-black text-xl">Loading...</div>
         </div>
       )}
-      <h2 className="text-2xl font-bold mb-4">Sale Orders</h2>
+      <h2 className="text-2xl font-bold text-black mb-4">Sale Orders</h2>
       <div className="grid grid-cols-1  mb-3">
         {orders.map((order) => (
           <div
